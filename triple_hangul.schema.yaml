@@ -37,7 +37,7 @@ engine:
     - lua_translator@*hangul.triple_hangul*tran
 
 speller:
-  alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`1234567890!@#$%^&*()-_+=[]{}\\|:;\"',.<>/? "
+  alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`!@#$%^&*()-_+=[]{}\\|:;\"',.<>/? "
   initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA"
   use_space: true
 
