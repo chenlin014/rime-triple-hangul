@@ -52,17 +52,30 @@ function P.func(key, env)
 
 	local commit_text = context:get_commit_text()
 	local input = context.input or ""
+	local back_seg = context.composition:back()
+	local back_seg_len = back_seg.length
+
+	local back_abc_r0 = back_seg:has_tag("abc") and back_seg_len % 3 == 0
+	local back_abc_r2 = back_seg:has_tag("abc") and back_seg_len % 3 == 2
 
 	local alphabet = schema_cfg:get_string('speller/alphabet') or ""
 	local initials = schema_cfg:get_string('speller/initials') or ""
 
-	if config.key2sym[key_repr:gsub("^Shift%+", "")] and (#input % 3 == 0) then
+	if config.key2sym[key_repr:gsub("^Shift%+", "")] and back_abc_r0 then
 		local symbol = config.key2sym[key_repr:gsub("^Shift%+", "")]
 		if alphabet:find(symbol,1,true) and not initials:find(symbol,1,true) then
 			if commit_text then
 				env.engine:commit_text(commit_text)
 				context:clear()
 			end
+		end
+	elseif key_repr == "space" then
+		if back_abc_r2 then
+			context:push_input(" ")
+			return 1 -- accepted
+		elseif back_abc_r0 then
+			env.engine:commit_text(commit_text)
+			context:clear()
 		end
 	end
 
@@ -102,10 +115,6 @@ function T.func(input, seg, env)
 		if success then
 			hangul = hangul..ret
 		end
-	elseif rem == " " then
-		env.engine:commit_text(hangul.." ")
-		context:clear()
-		return
 	end
 
 	::output::
