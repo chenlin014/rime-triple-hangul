@@ -17,6 +17,7 @@ switches:
 
 engine:
   processors:
+    - lua_processor@*hangul.triple_hangul*proc
     - ascii_composer
     - recognizer
     - key_binder
@@ -36,9 +37,9 @@ engine:
     - lua_translator@*hangul.triple_hangul*tran
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`1234567890!@#$%^&*()-_+=[]{}\|:;"',.<>/?
+  alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`1234567890!@#$%^&*()-_+=[]{}\\|:;\"',.<>/? "
   initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA"
-  max_code_length: 3
+  use_space: true
 
 punctuator:
 

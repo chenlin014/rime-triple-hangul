@@ -1,6 +1,6 @@
 -- Copied from https://github.com/jonghwanhyeon/hangul-jamo
 
-local hangul = require("unicode_hangul")
+local hangul = require("hangul/unicode_hangul")
 
 local M = {}
 
