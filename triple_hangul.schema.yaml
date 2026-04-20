@@ -14,6 +14,9 @@ switches:
     states: [ "한글", "ABC" ]
   - name: full_shape
     states: [ "半", "全" ]
+  - name: ascii_punct
+    reset: 1
+    states: [ 。，, ．， ]
 
 engine:
   processors:
@@ -42,6 +45,7 @@ speller:
   use_space: true
 
 punctuator:
+  import_preset: default
 
 key_binder:
   import_preset: default
