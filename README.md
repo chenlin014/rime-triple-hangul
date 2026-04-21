@@ -1,5 +1,8 @@
 # 三鍵韓文
 
+## 依賴
+- [sgalal/rime-hanja](https://github.com/sgalal/rime-hanja)
+
 ## 參考
 - [jonghwanhyeon/hangul-jamo](https://github.com/jonghwanhyeon/hangul-jamo) - 韓文的分解與合成
 - [einverne/rime-hangul](https://github.com/einverne/rime-hangul) - 韩语输入方案

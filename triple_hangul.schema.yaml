@@ -7,6 +7,8 @@ schema:
   version: '0.0'
   author:
     - 陳林(Chén Lín) <1chen0bryan@gmail.com>
+  dependencies:
+    - hanja
 
 switches:
   - name: ascii_mode
@@ -42,7 +44,9 @@ engine:
 speller:
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`!@#$%^&*()-_+=[]{}\\|:;\"',.<>/? "
   initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA"
-  use_space: true
+
+translator:
+  dictionary: hanja
 
 punctuator:
   import_preset: default
