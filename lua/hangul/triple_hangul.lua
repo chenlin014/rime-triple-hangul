@@ -93,7 +93,6 @@ function T.fini(env)
 end
 
 function T.func(input, seg, env)
-	local context = env.engine.context
 	local seg_end = seg.start
 
 	local codes = split_input(input)
@@ -124,6 +123,9 @@ function T.func(input, seg, env)
 	if hangul == "" then return end
 	yield(Candidate("hangul", seg.start, seg_end, hangul, " "))
 
+	if not env.engine.context:get_option("hanja") then
+		return
+	end
 	local t = env.tran:query(hangul, seg)
 	if not t then return end
 	for cand in t:iter() do

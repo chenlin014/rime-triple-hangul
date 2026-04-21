@@ -13,12 +13,14 @@ schema:
 switches:
   - name: ascii_mode
     reset: 0
-    states: [ "한글", "ABC" ]
+    states: [ "한", "ABC" ]
   - name: full_shape
     states: [ "半", "全" ]
   - name: ascii_punct
     reset: 1
     states: [ 。，, ．， ]
+  - name: hanja
+    states: [ "글", "字" ]
 
 engine:
   processors:
@@ -57,6 +59,7 @@ key_binder:
     # disabling paging with period and comma
     - { when: has_menu, accept: period, send: period}
     - { when: has_menu, accept: comma, send: comma}
+    - { when: has_menu, accept: Escape, toggle: hanja}
 
 editor:
   bindings:
