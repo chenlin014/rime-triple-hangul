@@ -1,4 +1,4 @@
--- Copied from https://github.com/jonghwanhyeon/hangul-jamo
+-- Derived from https://github.com/jonghwanhyeon/hangul-jamo
 
 local M = {}
 
