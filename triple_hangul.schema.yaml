@@ -7,18 +7,24 @@ schema:
   version: '0.0'
   author:
     - 陳林(Chén Lín) <1chen0bryan@gmail.com>
+  dependencies:
+    - emoji_ko
 
 switches:
   - name: ascii_mode
     reset: 0
-    states: [ "한", "ABC" ]
+    states: [ "글", "A" ]
   - name: full_shape
     states: [ "半", "全" ]
   - name: ascii_punct
     reset: 1
     states: [ 。，, ．， ]
   - name: hanja
-    states: [ "글", "字" ]
+    reset: 1
+    states: [ "자", "字" ]
+  - name: emoji
+    reset: 1
+    states: [ "자", "📏" ]
 
 engine:
   processors:
@@ -39,7 +45,9 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - lua_translator@*hangul.triple_hangul*tran
+    - lua_translator@*hangul.triple_hangul*tran@hangul
+    - lua_translator@*hangul.triple_hangul*tran@hanja
+    - lua_translator@*hangul.triple_hangul*tran@emoji
 
 speller:
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`!@#$%^&*()-_+=[]{}\\|:;\"',.<>/? "
@@ -47,6 +55,19 @@ speller:
 
 translator:
   dictionary: hanja_hangul
+
+hangul:
+  quality: 100
+
+hanja:
+  dictionary: hanja_hangul
+  option_name: hanja
+  quality: 80
+
+emoji:
+  dictionary: emoji_ko
+  option_name: emoji
+  quality: 90
 
 punctuator:
   import_preset: default
@@ -57,7 +78,8 @@ key_binder:
     # disabling paging with period and comma
     - { when: has_menu, accept: period, send: period}
     - { when: has_menu, accept: comma, send: comma}
-    - { when: has_menu, accept: Escape, toggle: hanja}
+    - { when: has_menu, accept: Escape, toggle: emoji}
+    - { when: has_menu, accept: Shift+Escape, toggle: hanja}
 
 editor:
   bindings:
