@@ -1,5 +1,8 @@
 # 三鍵韓文
 
+## 默認布局
+![默認布局](default_layout.png)
+
 ## 所用資源
 - [jonghwanhyeon/hangul-jamo](https://github.com/jonghwanhyeon/hangul-jamo) - 韓文的分解和合成
 - [NeoMindStd/HanjaDB](https://github.com/NeoMindStd/HanjaDB) - 韓語漢字資料庫
