@@ -124,7 +124,6 @@ function T.func(input, seg, env)
 	end
 
 	::output::
-	hangul = hangul:gsub("^ ", "")
 	if hangul == "" then return end
 
 	local quality = env.engine.schema.config:get_int(name_space.."/quality") or 0
