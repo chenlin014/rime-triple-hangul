@@ -1,4 +1,5 @@
 # 三鍵韓文
+[Rime](https://rime.im) 韓文三拼方案
 
 ## 默認布局
 ![默認布局](default_layout.png)
