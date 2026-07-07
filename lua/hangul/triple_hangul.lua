@@ -85,23 +85,12 @@ end
 local T = {}
 
 function T.init(env)
-	local name_space = env.name_space
-	if not name_space or name_space == "hangul" then return end
-	local schema = Schema(env.engine.schema.schema_id or "")
-	env[name_space.."_tran"] = Component.Translator(env.engine, schema, name_space, "script_translator")
 end
 
 function T.fini(env)
 end
 
 function T.func(input, seg, env)
-	local name_space = env.name_space
-	if name_space ~= "hangul" then
-		if not env.engine.context:get_option(name_space) then
-			return
-		end
-	end
-
 	local codes = split_input(input)
 	local rem = codes.rem or ""
 
@@ -112,11 +101,11 @@ function T.func(input, seg, env)
 		hangul = hangul..ret
 	end
 
-	if rem:match("^[a-z]$") then
+	if #rem == 1 then
 		if maps.key2onset[rem] then
 			hangul = hangul..maps.key2onset[rem]
 		end
-	elseif rem:match("^[a-z].$") then
+	elseif #rem == 2 then
 		local success, ret = pcall(decode_syllable, rem.." ", maps)
 		if success then
 			hangul = hangul..ret
@@ -126,21 +115,8 @@ function T.func(input, seg, env)
 	::output::
 	if hangul == "" then return end
 
-	local quality = env.engine.schema.config:get_int(name_space.."/quality") or 0
-
-	if name_space == "hangul" then
-		local cand = Candidate(name_space, seg.start, seg._end, hangul, " ")
-		cand.quality = quality
-		yield(cand)
-	else
-		local t = env[name_space.."_tran"]:query(hangul, seg)
-		if not t then return end
-		for c in t:iter() do
-			local cand = Candidate(name_space, seg.start, seg._end, c.text, " ")
-			cand.quality = quality
-			yield(cand)
-		end
-	end
+	local cand = Candidate("hangul", seg.start, seg._end, hangul, " ")
+	yield(cand)
 end
 
 return { tran=T, proc=P }

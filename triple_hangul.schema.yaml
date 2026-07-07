@@ -45,29 +45,28 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - lua_translator@*hangul.triple_hangul*tran@hangul
-    - lua_translator@*hangul.triple_hangul*tran@hanja
-    - lua_translator@*hangul.triple_hangul*tran@emoji
+    - lua_translator@*hangul.triple_hangul*tran
+  filters:
+    - lua_filter@*common.trans_filter@hanja
+    - lua_filter@*common.trans_filter@emoji
 
 speller:
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`!@#$%^&*()-_+=[]{}\\|:;\"',.<>/? "
   initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA"
 
-translator:
-  dictionary: hanja_hangul
-
-hangul:
-  quality: 100
-
 hanja:
   dictionary: hanja_hangul
-  option_name: hanja
-  quality: 80
+  tran_type: table_translator
+  output_source: true
+  input_types: [ hangul ]
+  switch: hanja
 
 emoji:
   dictionary: emoji_ko
-  option_name: emoji
-  quality: 90
+  tran_type: table_translator
+  output_source: true
+  input_types: [ hangul ]
+  switch: emoji
 
 punctuator:
   import_preset: default
