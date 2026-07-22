@@ -15,10 +15,7 @@ switches:
     reset: 0
     states: [ "글", "A" ]
   - name: full_shape
-    states: [ "半", "全" ]
-  - name: ascii_punct
-    reset: 1
-    states: [ 。，, ．， ]
+    states: [ ．，, 。， ]
   - name: hanja
     reset: 1
     states: [ "자", "字" ]
@@ -77,6 +74,7 @@ punctuator:
     __include: punctuation:/ascii_style
     "\\": [ "₩", "\\" ]
     "$":  [ "$", "₩" ]
+    "|" : [ ·, "|", ｜, "§", "¦" ]
 
 key_binder:
   import_preset: default
