@@ -20,7 +20,7 @@ switches:
     reset: 1
     states: [ "자", "字" ]
   - name: emoji
-    reset: 1
+    reset: 0
     states: [ "자", "📏" ]
 
 engine:
@@ -38,6 +38,7 @@ engine:
     - navigator
     - express_editor
   segmentors:
+    - lua_segmentor@*common.trikey*seg
     - ascii_segmentor
     - matcher
     - abc_segmentor
@@ -52,7 +53,7 @@ engine:
 
 speller:
   alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`!@#$%^&*()-_+={}\\|:;\"',.<>/? "
-  initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA"
+  initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA;"
 
 hanja:
   dictionary: hanja_hangul
