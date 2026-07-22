@@ -47,35 +47,14 @@ end
 
 function P.func(key, env)
 	local context = env.engine.context
-	local schema_cfg = env.engine.schema.config
-	local key_repr = key:repr()
-
-	local commit_text = context:get_commit_text()
-	local input = context.input or ""
+	local repr = key:repr()
 	local back_seg = context.composition:back()
-	local back_seg_len = back_seg.length
+	local len = back_seg.length
 
-	local back_abc_r0 = back_seg:has_tag("abc") and back_seg_len % 3 == 0
-	local back_abc_r2 = back_seg:has_tag("abc") and back_seg_len % 3 == 2
-
-	local alphabet = schema_cfg:get_string('speller/alphabet') or ""
-	local initials = schema_cfg:get_string('speller/initials') or ""
-
-	if config.key2sym[key_repr:gsub("^Shift%+", "")] and back_abc_r0 then
-		local symbol = config.key2sym[key_repr:gsub("^Shift%+", "")]
-		if alphabet:find(symbol,1,true) and not initials:find(symbol,1,true) then
-			if commit_text then
-				env.engine:commit_text(commit_text)
-				context:clear()
-			end
-		end
-	elseif key_repr == "space" then
-		if back_abc_r2 then
+	if repr == "space" and back_seg:has_tag("abc") then
+		if len % 3 == 2 then
 			context:push_input(" ")
 			return 1 -- accepted
-		elseif back_abc_r0 then
-			env.engine:commit_text(commit_text)
-			context:clear()
 		end
 	end
 
