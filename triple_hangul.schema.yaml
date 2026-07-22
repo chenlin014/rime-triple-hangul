@@ -88,9 +88,14 @@ key_binder:
     - { when: has_menu, accept: Escape, toggle: emoji}
     - { when: has_menu, accept: Shift+Escape, toggle: hanja}
 
+ascii_composer:
+  good_old_caps_lock: true
+  Shift_L: commit_code
+  Shift_R: noop
+
 editor:
   bindings:
-    Return: confirm
+    Shift_R: confirm
 
 recognizer:
   import_preset: default
