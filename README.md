@@ -5,7 +5,7 @@
 ![默認布局](default_layout.png)
 
 ## 所用資源
-- [jonghwanhyeon/hangul-jamo](https://github.com/jonghwanhyeon/hangul-jamo) - 韓文的分解和合成
+- [jonghwanhyeon/hangul-jamo](https://github.com/jonghwanhyeon/hangul-jamo) - 韓文的合成和分解
 - [NeoMindStd/HanjaDB](https://github.com/NeoMindStd/HanjaDB) - 韓語漢字資料庫
 - [carpedm20/emoji](https://github.com/carpedm20/emoji) - 多語言Python繪文字模塊
 

@@ -52,8 +52,8 @@ engine:
     - lua_filter@*common.trans_filter@emoji
 
 speller:
-  alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~`!@#$%^&*()-_+={}\\|:;\"',.<>/? "
-  initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA;"
+  alphabet: "zyxwvutsrqponmlkjihgfedcba;,./ "
+  initials: "zyxwvutsrqponmlkjihgfedcba;"
 
 hanja:
   dictionary: hanja_hangul
