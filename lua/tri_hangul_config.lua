@@ -24,39 +24,4 @@ config.coda_map = {
 	"ㅍ", "ㅊ", "ㅌ", "ㅋ", "ㄳ", "ㅀ", "ㅄ", "ㄵ", "ㄾ", "ㄻ"
 }
 
-config.key2sym = {
-	["grave"] = "`",
-	["asciitilde"] = "~",
-	["exclam"] = "!",
-	["at"] = "@",
-	["numbersign"] = "#",
-	["dollar"] = "$",
-	["percent"] = "%",
-	["asciicircum"] = "^",
-	["ampersand"] = "&",
-	["asterisk"] = "*",
-	["parenleft"] = "(",
-	["parenright"] = ")",
-	["minus"] = "-",
-	["underscore"] = "_",
-	["plus"] = "+",
-	["equal"] = "=",
-	["bracketleft"] = "[",
-	["bracketright"] = "]",
-	["braceleft"] = "{",
-	["braceright"] = "}",
-	["backslash"] = "\\",
-	["bar"] = "|",
-	["colon"] = ":",
-	["semicolon"] = ";",
-	["quotedbl"] = "\"",
-	["apostrophe"] = "'",
-	["comma"] = ",",
-	["period"] = ".",
-	["less"] = "<",
-	["greater"] = ">",
-	["slash"] = "/",
-	["question"] = "?",
-}
-
 return config
