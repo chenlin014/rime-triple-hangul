@@ -91,8 +91,9 @@ key_binder:
 
 ascii_composer:
   good_old_caps_lock: true
-  Shift_L: commit_code
-  Shift_R: noop
+  switch_key:
+    Shift_L: commit_text
+    Shift_R: noop
 
 editor:
   bindings:
