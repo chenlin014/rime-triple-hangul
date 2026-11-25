@@ -1,5 +1,14 @@
 # 三鍵韓文
+
+配方： ℞ **triple-hangul**
+
 [Rime](https://rime.im) 韓文三拼方案
+
+## 安裝
+
+[東風破](https://github.com/rime/plum) 安裝口令： `bash rime-install chenlin014/rime-triple-hangul:full`
+
+安裝默認配置： `bash rime-install chenlin014/rime-triple-hangul:default_config`
 
 ## 默認布局
 ![默認布局](default_layout.png)

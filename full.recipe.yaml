@@ -1,0 +1,15 @@
+# encoding: utf-8
+---
+recipe:
+  Rx: full
+  args:
+  description: >-
+    三鍵韓文
+install_files: >-
+  *.yaml
+  lua/triple_hangul.lua
+  lua/hangul/*.lua
+  lua/common/trikey.lua
+  lua/common/trans_filter.lua
+  lua/common/commit_w_space.lua
+  lua/common/commit_n_return.lua

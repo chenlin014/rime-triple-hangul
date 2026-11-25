@@ -1,0 +1,9 @@
+# encoding: utf-8
+---
+recipe:
+  Rx: default_config
+  args:
+  description: >-
+    三鍵韓文默認設置
+install_files: >-
+  lua/tri_hangul_config.lua
