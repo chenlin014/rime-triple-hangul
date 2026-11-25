@@ -46,7 +46,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - lua_translator@*hangul.triple_hangul*tran
+    - lua_translator@*triple_hangul*tran
   filters:
     - lua_filter@*common.trans_filter@hanja
     - lua_filter@*common.trans_filter@emoji
