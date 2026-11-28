@@ -11,5 +11,5 @@ install_files: >-
   lua/hangul/*.lua
   lua/common/trikey.lua
   lua/common/trans_filter.lua
-  lua/common/commit_w_space.lua
-  lua/common/commit_n_return.lua
+  lua/common/uneaten_space.lua
+  lua/common/uneaten_return.lua

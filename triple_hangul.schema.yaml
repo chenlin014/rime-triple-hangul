@@ -26,8 +26,8 @@ switches:
 engine:
   processors:
     - lua_processor@*triple_hangul*proc
-    - lua_processor@*common.commit_w_space
-    - lua_processor@*common.commit_n_return
+    - lua_processor@*common.uneaten_space
+    - lua_processor@*common.uneaten_return
     - selector
     - lua_processor@*common.trikey*proc
     - ascii_composer
