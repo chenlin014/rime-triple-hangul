@@ -1,5 +1,5 @@
 local hg_comp = require("hangul/hangul_compose")
-local config = require("triple_hangul_config")
+local config = require("trikey_hangul_config")
 
 local maps = {}
 maps.key2onset = {}

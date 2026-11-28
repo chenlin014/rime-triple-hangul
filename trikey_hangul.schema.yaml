@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 schema:
-  schema_id: triple_hangul
+  schema_id: trikey_hangul
   name: 삼한
   version: '0.0'
   author:
@@ -25,7 +25,7 @@ switches:
 
 engine:
   processors:
-    - lua_processor@*triple_hangul*proc
+    - lua_processor@*trikey_hangul*proc
     - lua_processor@*common.uneaten_space
     - lua_processor@*common.uneaten_return
     - selector
@@ -46,7 +46,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - lua_translator@*triple_hangul*tran
+    - lua_translator@*trikey_hangul*tran
   filters:
     - lua_filter@*common.trans_filter@hanja
     - lua_filter@*common.trans_filter@emoji

@@ -7,7 +7,7 @@ recipe:
     三鍵韓文
 install_files: >-
   *.yaml
-  lua/triple_hangul.lua
+  lua/trikey_hangul.lua
   lua/hangul/*.lua
   lua/common/trikey.lua
   lua/common/trans_filter.lua
