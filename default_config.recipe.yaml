@@ -6,4 +6,4 @@ recipe:
   description: >-
     三鍵韓文默認設置
 install_files: >-
-  lua/tri_hangul_config.lua
+  lua/triple_hangul_config.lua
